@@ -1,0 +1,23 @@
+{
+  "name": "rookliftfullstack",
+  "version": "1.0.0",
+  "description": "rooklift site backend and frontend",
+  "keywords": [
+    "Chess"
+  ],
+  "homepage": "https://github.com/dutsonc/RookliftFullStack#readme",
+  "bugs": {
+    "url": "https://github.com/dutsonc/RookliftFullStack/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dutsonc/RookliftFullStack.git"
+  },
+  "license": "ISC",
+  "author": "Cole",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
