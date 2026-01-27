@@ -18,7 +18,7 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "start": "node ./backend/src/index.js",
-    "dev": "nodemon ./backend/src/index.js"
+    "start": "node rookliftfullstack/backend/src/index.js",
+    "dev": "nodemon rookliftfullstack/backend/src/index.js"
   }
 }

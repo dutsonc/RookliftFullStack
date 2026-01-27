@@ -23,7 +23,7 @@ const registerUser = async (req, res) => {
           username,
           email: email.toLowerCase(),
           password,
-          loggedIn: false,
+          loggedIn: false
         });
         res.status(201).json({ message: "User registered successfully", userId: newUser._id, email: newUser.email, username: newUser.username});
 } catch (error) {
