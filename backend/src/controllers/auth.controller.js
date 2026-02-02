@@ -30,4 +30,21 @@ const registerUser = async (req, res) => {
     res.status(500).json({ message: "Server error", error: error.message });
   }
 }
+const loginUser = async (req, res) => {
+  try {
+    
+    //checking if the user already exists
+    const { email, password } = req.body;
+
+    const user = await User.findOne({ email: email.toLowerCase() });
+
+    if (!user) return res.status(404).json({ message: "User not found" }); 
+  
+    //checking if the password is correct
+    if (user.password !== password) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
+  } catch (error) {
+    
+  }
 export { registerUser };
