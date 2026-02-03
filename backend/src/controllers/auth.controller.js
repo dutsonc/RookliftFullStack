@@ -44,7 +44,11 @@ const loginUser = async (req, res) => {
     if (user.password !== password) {
       return res.status(401).json({ message: "Invalid credentials" });
     }
-
+    const isMatch = await user.comparePassword(password);
+    if (!isMatch) {
+    return res.status(401).json({ message: "Invalid credentials" });
+    } 
+    res.status(200).json({ message: "Login successful", userId: user._id, email: user.email, username: user.username });
 
 
   } catch (error) {

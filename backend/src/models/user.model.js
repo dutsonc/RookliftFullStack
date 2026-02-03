@@ -19,7 +19,7 @@ userSchema.pre("save", async function (next) {
   } catch (error) {
     return next(error);
   }
-}
+});
 
 // Method to compare passwords
 userSchema.methods.comparePassword = async function (candidatePassword) {
