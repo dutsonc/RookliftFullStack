@@ -44,7 +44,11 @@ const loginUser = async (req, res) => {
     if (user.password !== password) {
       return res.status(401).json({ message: "Invalid credentials" });
     }
+
+
+
   } catch (error) {
-    
+    res.status(500).json({ message: "Server error", error: error.message });
   }
-export { registerUser };
+};
+export { registerUser, loginUser };
