@@ -1,1 +1,1 @@
-This is the start to a frontend and backend for a website
+A basic chess website
