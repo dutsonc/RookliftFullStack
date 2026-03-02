@@ -1,6 +1,5 @@
-const = gameController = require("../controllers/game.controller.js");
 import { Router } from 'express';
+import gameController from '../controllers/game.controller.js';
 const router = Router();
-
-router.route('/').get(gameController.createGame);
-router.route('/:id').get(gameController.getGameById);
+router.route('/games').get(gameController.getGames);
+router.route('/games/:id').get(gameController.getGameById);
