@@ -9,5 +9,6 @@ const gameSchema = new Schema({
   pgn: {String, required: true},
   id: {Number, required: true, unique: true},
   datePlayed: {Date, required: true},
+  lichessGameId: {String},
 });
 export const Game = mongoose.model("Game", gameSchema);
