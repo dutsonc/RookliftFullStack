@@ -1,11 +1,10 @@
-import { Chess } from "chess.js";
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
 
-const pgnFilePath = path.join(process.cwd(), "data", "lichesswhitewins.pgn");
+const pgnFilePath = path.join(process.cwd(), "src/data", "lichesswhitewinsexports.pgn");
 
 let games = [];
-
+console.log("Loading games from PGN file...");
 function loadGamesFromPgn() {
     const fileContent = fs.readFileSync(pgnFilePath, 'utf8');
 
@@ -19,6 +18,7 @@ function loadGamesFromPgn() {
         const blackRatingMatch = gameText.match(/\[BlackElo "(\d+)"\]/);
         const resultMatch = gameText.match(/\[Result "([^"]+)"\]/);
         const dateMatch = gameText.match(/\[Date "([^"]+)"\]/);
+        const movesMatch = gameText.match(/\n\n([\s\S]+)$/);
 
         return {
             id,
@@ -27,9 +27,12 @@ function loadGamesFromPgn() {
             whiteRating: whiteRatingMatch ? parseInt(whiteRatingMatch[1]) : null,
             blackRating: blackRatingMatch ? parseInt(blackRatingMatch[1]) : null,
             result: resultMatch ? resultMatch[1] : null,
-            date: dateMatch ? dateMatch[1] : null
+            date: dateMatch ? dateMatch[1] : null,
+            moves: movesMatch ? movesMatch[1] : null,
         };
-    });
-}
 
+    });
+return games;}
 loadGamesFromPgn();
+console.log(games);
+export {loadGamesFromPgn, games};
