@@ -23,3 +23,21 @@ const getgameID = async (req, res) => {
 };
 export { getGames, getgameID };
 
+const getWhiteGames = async (req, res) => {
+    try {
+        const whiteGames = games.filter(game => game.White);
+        res.status(200).json(whiteGames);
+    } catch (error) {
+        res.status(500).json({ message: "Error fetching white games", error: error.message });
+    }
+};
+
+const getBlackGames = async (req, res) => {
+    try {
+        const blackGames = games.filter(game => game.Black);
+        res.status(200).json(blackGames);
+    } catch (error) {
+        res.status(500).json({ message: "Error fetching black games", error: error.message });
+    }
+};
+export { getGames, getgameID, getWhiteGames, getBlackGames };

@@ -34,5 +34,4 @@ function loadGamesFromPgn() {
     });
 return games;}
 loadGamesFromPgn();
-console.log(games);
 export {loadGamesFromPgn, games};
