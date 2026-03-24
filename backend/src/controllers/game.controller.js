@@ -21,8 +21,6 @@ const getgameID = async (req, res) => {
         res.status(500).json({ message: "Error fetching game", error: error.message });
     }
 };
-export { getGames, getgameID };
-
 const getWhiteGames = async (req, res) => {
     try {
         const whiteGames = games.filter(game => game.White);

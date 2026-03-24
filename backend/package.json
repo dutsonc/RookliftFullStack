@@ -20,5 +20,11 @@
   "scripts": {
     "start": "node rookliftfullstack/backend/src/index.js",
     "dev": "nodemon rookliftfullstack/backend/src/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "fs": "^0.0.1-security",
+    "nodemon": "^3.1.14",
+    "path": "^0.12.7"
   }
 }
