@@ -4,7 +4,7 @@ let currentGameIndex = 0;
 window.onload = async () => {
   // Load all games once
   try {
-    const res = await fetch("http://localhost:5000/api/v1/games"); // backend endpoint
+    const res = await fetch("http://localhost:8000/api/v1/games"); // backend endpoint
     games = await res.json();
 
     if (games.length > 0) {
